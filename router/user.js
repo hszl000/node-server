@@ -69,10 +69,17 @@ router.get('/whoami', (req, res) => {
     })
   }
 })
-
-
 router.get('/info', (req, res) => {
   res.json('user info...')
+})
+
+// 获取用户权限
+router.post('/getUserMenu', (req, res) => {
+  res.json({
+    error:0,
+    msg:'success',
+    result:[]
+  })
 })
 
 module.exports = router

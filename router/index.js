@@ -1,6 +1,7 @@
 const express = require('express')
 const boom = require('boom')
 const userRouter = require('./user')
+const flowRouter = require('./flow')
 const jwtAuth = require('./jwt')
 const Result = require('../models/Result')
 
@@ -15,6 +16,8 @@ router.get('/', (req, res) => {
 
 // user模块下的请求
 router.use('/user', userRouter)
+// flow模块下的请求
+router.use('/flow', flowRouter)
 
 /**
  * 集中处理 404 请求中间件
